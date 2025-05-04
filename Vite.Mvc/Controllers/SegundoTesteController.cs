@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Vite.Mvc.Controllers;
 
-public class TestOne : Controller
+public sealed class SegundoTesteController: Controller
 {
     // GET
     public IActionResult Index()

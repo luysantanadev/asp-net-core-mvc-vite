@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>@ViewData["Title"] - Vite.Mvc</title>
-  <link rel="stylesheet" vite-href="~/js/layout.js" asp-append-version="true"/>
+  <link rel="stylesheet" vite-href="~/dist/js/layout.js" asp-append-version="true"/>
   @await RenderSectionAsync("styles", false)
 </head>
 <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -46,7 +46,7 @@
   @await Html.PartialAsync("_Footer")
 </div>
 
-<script type="module" vite-src="~/js/layout.js" asp-append-version="true"></script>
+<script type="module" vite-src="~/dist/js/layout.js" asp-append-version="true"></script>
 @await RenderSectionAsync("scripts", required: false)
 </body>
 </html>

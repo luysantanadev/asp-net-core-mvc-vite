@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Vite.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +11,8 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddViteServices(opt =>
 {
     opt.Server.Https = false;
-    opt.Server.AutoRun = builder.Environment.IsDevelopment();
+    opt.Server.AutoRun = true;
+    opt.Base = "dist";
 });
 
 var app = builder.Build();
@@ -19,7 +23,11 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
 }
 
-app.UseViteDevelopmentServer(app.Environment.IsDevelopment());
+if (app.Environment.IsDevelopment())
+{
+    app.UseWebSockets();
+    app.UseViteDevelopmentServer(true);
+}
 
 app.UseStaticFiles();
 
