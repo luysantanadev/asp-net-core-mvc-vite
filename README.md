@@ -1,4 +1,4 @@
-# ASP.NET Core MVC + Vite.js + AdminLTE Integration
+# ASP.NET Core MVC + Vite.js + AdminLTE
 
 Este repositório demonstra como integrar o ASP.NET Core MVC com o Vite.js, utilizando o template AdminLTE para construir interfaces administrativas modernas.
 
@@ -12,31 +12,15 @@ Este repositório demonstra como integrar o ASP.NET Core MVC com o Vite.js, util
 
 Oferecer um ponto de partida simples e funcional para quem deseja utilizar um frontend moderno (com build otimizado, HMR, etc.) em projetos ASP.NET Core MVC tradicionais.
 
-# 📦 Estrutura do projeto
-
 # ⚙️ Como rodar o projeto
 
 - Clone este repositório
-- Instale as dependências do frontend:
-```bash 
-    cd ClientApp
-    npm install
-```
-Inicie o Vite em modo de desenvolvimento:
-```bash
-  npm run dev
-```
-
-No terminal raiz, rode o backend:
-```bash
-  dotnet run
-```
-
-Acesse o projeto em https://localhost:5001
+- Comece o desenvolvimento com visual studio ou IDE de sua preferência
+- Acesse o projeto em https://localhost:<porta>
 
 # 📌 Notas
 
-O build de produção do Vite será colocado automaticamente em wwwroot.
+O build de produção do Vite será colocado automaticamente em wwwroot/dist.
 AdminLTE foi integrado via arquivos estáticos e pode ser customizado conforme necessário.
 
 # 📄 Licença
