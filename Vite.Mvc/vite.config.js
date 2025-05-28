@@ -1,7 +1,8 @@
-import {defineConfig} from 'vite'
+import {defineConfig, normalizePath} from 'vite'
 import path from 'path'
 import fg from 'fast-glob'
 import {viteStaticCopy} from 'vite-plugin-static-copy'
+import vue from '@vitejs/plugin-vue'
 
 const entradas = fg.sync('wwwroot/src/js/**/*.js').reduce((entrada, file) => {
     const nomeArquivo = file
@@ -32,11 +33,12 @@ export default defineConfig({
         }
     },
     plugins: [
+        vue(),
         viteStaticCopy({
             targets: [
                 {
-                    src: path.resolve(__dirname, 'wwwroot/src/img/**/*'),
-                    dest: path.resolve(__dirname, 'wwwroot/dist/img')
+                    src: normalizePath(path.resolve(__dirname, './wwwroot/src/img/**/*')),
+                    dest: normalizePath(path.resolve(__dirname, './wwwroot/dist/img'))
                 },
                 // {
                 //     src: path.resolve(__dirname, 'wwwroot/src/fonts/*'),

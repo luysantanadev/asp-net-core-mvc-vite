@@ -1,0 +1,26 @@
+﻿@model Crud
+
+@{
+    ViewData["Title"] = "Excluir";
+    Layout = "_Layout";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-danger card-outline">
+            <div class="card-header">
+                <h3 class="card-title">Excluir Item</h3>
+            </div>
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="card-body">
+                    <p>Tem certeza que deseja excluir o item <strong>@Model.Nome</strong>?</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,1 +1,17 @@
-<h4>Teste Two</h4>
+@{
+    ViewData["Title"] = "CRUD com Vue.js";
+}
+
+<!-- Inputs hidden para passar as rotas dinamicamente -->
+<input type="hidden" id="url-get" value="@Url.Action("Get", "SegundoTeste")" />
+<input type="hidden" id="url-getbyid" value="@Url.Action("GetById", "SegundoTeste")" />
+<input type="hidden" id="url-post" value="@Url.Action("Create", "SegundoTeste")" />
+<input type="hidden" id="url-put" value="@Url.Action("Update", "SegundoTeste")" />
+<input type="hidden" id="url-delete" value="@Url.Action("Delete", "SegundoTeste")" />
+
+<div id="app"></div>
+
+@section scripts
+{
+    <script type="module" vite-src="~/dist/js/crud.vue.js" asp-append-version="true"></script>
+}
